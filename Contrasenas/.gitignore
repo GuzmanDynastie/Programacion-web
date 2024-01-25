@@ -1,0 +1,8 @@
+#Archivos especificos
+contrasenas.csv
+
+#Directorios especificos
+#Contrasenas/**/*
+#Contrasenas/**/usuario1.txt
+#Contrasenas/**/usuario*
+Contrasenas/**/usuario*.txt
