@@ -7,16 +7,44 @@
 </head>
 <body>
     <h1><b>Formularios:</b></h1>
-    <h6>Agradecemos tus comentarios</h6>
+    <p>Agradecemos tus comentarios</p>
     <ol>
-        <li><label for="nombre">Nombre: </label>
-            <input type="nombre" type="text" name="name">
+        <li>
+            <label for="nombre">Nombre: </label>
+            <input type="nombre" type="text" name="username">
         </li>
         <li>
+            <label for="edad">Edad: </label>
             <input type="number" name="cantidad" min="1" max="13">
         </li>
-
+        <li>
+            <label for="fecha">Fecha: </label>
+            <input type="date" name="fecha" value="2024-02-10">
+        </li>
+        <li>
+            <label for="carrera">¿Cual es tu carrera?</label><br>
+            <input type="radio" name="test" value="Ingenieria en Computacion">Ingenieria en Computacion
+            <input type="radio" name="test" value="Psicologia">Psicologia
+        </li>
+        <li>
+            <label for="check">¿Que cosas ya sabes del desarrollo web?</label><br>
+            <input type="checkbox" name="chbx1" value="HTML">HTML <br>
+            <input type="checkbox" name="chbx2" value="CSS">CSS <br>
+            <input type="checkbox" name="chbx3" value="Javascript">Javascript <br>
+            <input type="checkbox" name="chbx4" value="Node.js">Node.js <br>
+            <label for="web">Otro: </label>
+            <input type="text" name="web">
+        </li>
+        <li>
+            <label for="profesor">¿Como evaluas al profesor en sus primeras sesiones?</label><br>
+            0<input type="range" name="points" min="0" max="10">10<br>
+        </li>
+        <li>
+            <label for="datos">Sugerencia, comentario, expectativas:</label><br>
+            <textarea name="message" cols="30" rows="10"></textarea><br>
+        </li>
     </ol>
+    <input type="submit" value="Enviar correo">
 
 
 </body>
