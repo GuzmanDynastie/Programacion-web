@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Tipo de etiqueta */
+        li {
+            text-align: center;
+            list-style: none;
+        }
+
+        /* Termina */
+        [data-desc$="e-"] { 
+            text-decoration: underline wavy;
+        }
+
+        /* Termina */
+        [data-desc$="e+"] { 
+            text-shadow:  2px 2px 8px black;
+        }
+
+        /* Inicia */
+        [data-desc^="no-si"] {
+            font-weight: bolder;
+        }
+
+        /* Contiene */
+        [data-desc*="uso-mucho"] {
+            font-style: italic;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        /* Contiene */
+        [data-desc*="re-no"] {
+            background-color: lightcoral;
+            color: white;
+        }
+
+        /* Contiene */
+        [data-desc*="re-si"] {
+            background-color: rgb(144, 238, 144);
+        }
+    </style>
+
+</head>
+
+<body>
+    <li class="tag" data-desc="no-no uso-normal re-no-e-">center</li>
+    <li class="tag" data-desc="no-no uso-mucho re-neutro">p</li>
+    <li class="tag" data-desc="no-no uso-mucho re-si-e+">div</li>
+    <li class="tag" data-desc="no-no uso-mucho re-si">html</li>
+    <li class="tag" data-desc="no-si uso-poco re-neutro">article</li>
+    <li class="tag" data-desc="no-no uso-normal re-si-e+">textarea</li>
+    <li class="tag" data-desc="no-si uso-poco re-si">video</li>
+    <li class="tag" data-desc="no-no uso-poco re-no">shadow</li>
+</body>
+
+</html>
