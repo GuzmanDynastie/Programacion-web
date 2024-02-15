@@ -3,9 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estilizado_condicional.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Cuantos valores puedes atrapar</h1>
+
+    <p>Reglas: </p>
+
+    <ul>
+        <li>Debes hacer que se vea similar la imagen de solucion</li>
+        <li>Cada color representa a una regla de CSS</li>
+        <li><span id="warning">No añadir atributos o cambiar contenido al HTML</span></li>
+    </ul>
+
+    <h2>Primera tabla</h2>
+
+    <table border="1" width="600px" height="200px">
+        <tr>
+            <td>-1</td>
+            <td>2</td>
+            <td data-val="neg">-1</td>
+            <td>-1</td>
+            <td>3</td>
+            <td>-1</td>
+            <td class="pos">1</td>
+            <td>4</td>
+            <td data-val="neg">-1</td>
+            <td>-1</td>
+        </tr>
+        <tr class="pos">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td class="pos">1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+        </tr>
+        <tr>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td data-val="neg">-1</td>
+            <td class="pos">1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-1</td>
+            <td data-val="pos">5</td>
+            <td>-1</td>
+            <td class="pos">1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td data-val="pos">1</td>
+        </tr>
+
+    </table>
+
+    <h2>Segunda tabla</h2>
+    <table border="1" width="600px">
+        <tr>
+            <td>-1</td>
+            <td>-1</td>
+            <td colspan="3">-1</td>
+            <td>3</td>
+            <td>-1</td>
+            <td rowspan="3">5</td>
+        </tr>
+        <tr>
+            <td colspan="2">1</td>
+            <td>3</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td colspan="2">1</td>
+
+        </tr>
+        <tr>
+            <td>-1</td>
+            <td colspan="2">1</td>
+            <td>3</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td>-1</td>
+        </tr>
+    </table>
+
 </body>
 </html>
