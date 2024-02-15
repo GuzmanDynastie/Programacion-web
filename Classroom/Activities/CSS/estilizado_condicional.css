@@ -1,0 +1,52 @@
+td {
+    text-align: center;
+}
+
+#warning {
+    background-color: orangered;
+    color: white;
+}
+
+/* Primera Tabla */
+table:first-of-type td:nth-child(7),
+table:first-of-type tr[class="pos"] {
+    background-color: rgb(144, 238, 144);
+}
+
+table:first-of-type tr:first-of-type td:nth-child(3n+2){
+    background-color: rgb(173, 216, 230);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+table:first-of-type tr:last-of-type td:nth-child(5n){
+    background-color: rgb(255, 182, 193);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+table:first-of-type tr:nth-of-type(4) td:nth-child(n+8):nth-child(-n+10),
+table:first-of-type tr:last-of-type td:nth-child(n+1):nth-child(-n+3) {
+    background-color: rgb(32, 178, 170);
+}
+
+
+/* Segunda Tabla */
+table:last-of-type td[colspan="2"]{
+    background-color: rgb(240, 128, 128);
+}
+
+table:last-of-type tr:first-of-type td:nth-child(4),
+table:last-of-type tr:nth-of-type(2) td:nth-child(2),
+table:last-of-type tr:last-of-type td:nth-child(3) {
+    background-color: rgb(135, 206, 250);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+table:last-of-type td[rowspan="3"] {
+    background-color: rgb(211, 211, 211);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
