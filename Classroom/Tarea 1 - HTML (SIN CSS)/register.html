@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate aqui</title>
 </head>
+
 <body>
-    
+
+    <table border="0">
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td colspan="2">
+                <h1><strong>REGISTRO</strong></h1>
+                <hr>
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top">
+                <a href="main.html">Inicio</a><br>
+                <a href=""><strong>Registro</strong></a><br>
+                <a href="about.html">Acerca del curso</a>
+            </td>
+            <td valign="top">
+                💒<br>
+                📝<br>
+                🔍
+            </td>
+            <td>
+                <table border="1" width="331" cellspacing="0">
+                    <thead>¿Te interesa inscribirte en nuestro curso?</thead>
+                    <form enctype="text/plain" action="mailto:correo@sitio.com?cc=otrof@test.com,
+                    otromas@sitio.com&bcc=oculto@sitio.com&subject=Noticia%20Importante" method="post">
+                        <tr>
+                            <td><label for="nombre">Nombre:</label></td>
+                            <td><input type="text" id="nombre" name="Nombre" placeholder="Escribe tu nombre" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email</label>:</td>
+                            <td><input type="email" id="email" name="Email" placeholder="Escribe tu correo" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="seleccionInput">Nivel de estudios:</label></td>
+                            <td>
+                                <select name="Nivel de estudios" id="seleccionInput">
+                                    <option value="Profesor">Profesor</option>
+                                    <option value="Estudiante de doctorado">Estudiante de doctorado</option>
+                                    <option value="Estudiante de maestria">Estudiante de maestria</option>
+                                    <option value="Estudiante de licenciatura">Estudiante de licenciatura</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="textInput">Comentario:</label></td>
+                            <td><textarea name="Comentario" id="textInput" cols="30" rows="10"
+                                    placeholder="Escribe aqui tu comentario sin acentos"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Enviar solicitud">
+                            </td>
+                        </tr>
+                    </form>
+                </table>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+
 </body>
+
 </html>
