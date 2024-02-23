@@ -1,0 +1,66 @@
+.logo img {
+    width: 60px;
+    padding-left: 10px;
+    float: left;
+}
+
+.dv6 img {
+    width: 70px;
+    float: left;
+}
+
+.dv6 {
+    padding-bottom: 90px;
+}
+
+@media screen and (max-width: 600px){
+    .dv6 img {
+        width: 100px;
+        float: left;
+    }
+}
+
+h1 {
+    background-color: rgb(135, 206, 250);
+    padding-top: 25px;
+    padding-bottom: 30px;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+}
+
+.cookies {
+    background-color: rgb(240, 128, 128);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.boton button {
+    float: right;
+    width: 90px; 
+    height: 60px; 
+}
+
+div.cookies div.texto {
+    padding-top: 16px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.texto {
+    padding-left: 20px;
+    padding-top: 110px;
+}
+
+html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
