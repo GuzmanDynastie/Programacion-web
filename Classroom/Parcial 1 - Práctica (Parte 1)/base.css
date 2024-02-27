@@ -1,0 +1,76 @@
+/* Escribe aquí tus estilos */
+
+@media only screen and (max-width: 750px) {
+    nav {
+        flex-direction: column;
+    }
+    nav a {
+        margin: 5px;
+    }
+}
+
+nav {
+    display: flex;
+    background-color: #303030;
+    padding: 10px 0;
+}
+
+nav a {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+hr {
+    margin: 5px;
+}
+
+nav a:hover {
+    color: darkviolet;
+}
+
+h2 {
+    text-align: center;
+    clear: both; /* Evita que se coloquen elementos a la izquierda y derecha del h2 */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección del flujo a vertical */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.inner-container {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 280px;
+    border: 2px solid;
+}
+
+label {
+    font-size: large;
+}
+
+input {
+    padding: 5px;
+    width: 500px;
+    font-size: large;
+}
+
+.btn {
+    margin-left: 8px;
+    background-color: darkviolet;
+    color: white;
+    font-size: large;
+}
+
+.btn:hover {
+    background-color: violet;
+}
