@@ -40,7 +40,7 @@ h1 {
 
 h4 {
     margin-left: 30px;
-    width: 290px;
+    width: 355px;
     padding: 20px 0px;
     border-bottom: 2px solid rgb(153, 156, 161);
 }
@@ -53,13 +53,14 @@ h5 {
     display: flex;
     margin-right: 40px;
     height: 280px;
+    width: 760px;
     border: 2px solid rgb(153, 156, 161);
 }
 
 .media-2 {
     display: flex;
     margin-right: 40px;
-    width: 350px;
+    width: 420px;
     height: 560px;
     border-radius: 5px;
     border: 2px solid rgb(153, 156, 161);
@@ -75,26 +76,110 @@ h5 {
     color: white;
 }
 
+.icon-pencil {
+    color: white;
+}
+
 .resumen-together {
     display: flex;
     justify-content: center;
 }
 
 img {
+    position: absolute;
     width: 150px;
     margin: 10px;
 }
 
+div.media-right {
+    position: absolute;
+    left: 48%;
+}
+
 .cantidad-producto {
+    position: absolute;
+    background-color: rgb(232, 235, 237);
+    padding: 6px 10px;
+    margin-left: 26px;
+    margin-top: 2px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 0;
+    border-right: 2px solid rgb(153, 156, 161);
+}
+
+.cantidad-precio {
+    position: absolute;
     background-color: rgb(232, 235, 237);
     padding: 6px 10px;
     margin-left: 25px;
+    margin-top: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border: 2px solid rgb(153, 156, 161);
 }
 
+.input-cantidad:focus {
+    border-color:  rgb(153, 156, 161);
+    outline: none;
+}
+
+.input-precio:focus {
+    border-color:  rgb(153, 156, 161);
+    outline: none;
+}
+
 .input-cantidad {
-    padding: 6px 10px;
+    width: 400px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 25%;
+    margin-left: 25px;
     border: 2px solid rgb(153, 156, 161);
+    border-radius: 5px;
+}
+
+.input-precio {
+    width: 350px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 20px;
+    border: 2px solid rgb(153, 156, 161);
+    border-radius: 5px;
+}
+
+span.editar-cantidad {
+    position: absolute;
+    background-color: rgb(18, 161, 182);
+    padding: 7px 10px;
+    margin-left: -39px;
+    margin-top: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+    border-right: 2px solid rgb(18, 161, 182);
+}
+
+label.pesos {
+    position: absolute;
+    background-color: rgb(232, 235, 237);
+    padding: 6px 10px;
+    margin-left: -62px;
+    margin-top: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid rgb(153, 156, 161);
+}
+
+div p {
+    font-weight: 500;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+hr {
+    margin-left: ;
 }
