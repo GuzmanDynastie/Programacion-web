@@ -42,7 +42,7 @@ h4 {
     margin-left: 30px;
     width: 355px;
     padding: 20px 0px;
-    border-bottom: 2px solid rgb(153, 156, 161);
+    /* border-bottom: 2px solid rgb(153, 156, 161); */
 }
 
 h5 {
@@ -52,6 +52,7 @@ h5 {
 .media {
     display: flex;
     margin-right: 40px;
+    margin-left: 40px;
     height: 280px;
     width: 760px;
     border: 2px solid rgb(153, 156, 161);
@@ -180,6 +181,40 @@ div p {
     margin-top: 30px;
 }
 
-hr {
-    margin-left: ;
+input[type="submit"] {
+    width: 200px;
 }
+
+div.inp {
+    display: flex;
+    justify-content: center;
+}
+
+div[class="inp-1"] input {
+    font-weight: bold;
+    font-size: x-large;
+    background-color: white;
+    color: rgb(97, 180, 115);
+    width: 380px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(97, 180, 115);
+} 
+
+div[class="inp-2"] input {
+    font-weight: bold;
+    font-size: x-large;
+    background-color: white;
+    color: red;
+    width: 380px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid red;
+} 
