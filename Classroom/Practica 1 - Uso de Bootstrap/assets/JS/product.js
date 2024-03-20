@@ -35,11 +35,11 @@ class Product {
         if (!uid || typeof uid !== 'string' || uid.trim() === '') {
             throw new ProductException('UID no puede estar vacio.');
         }
-        this.uid = uid;
+        this._uid = uid;
     }
 
     setTitle(title) {
-        if (!title || typeof uid !== 'string' || uid.trim() === '') {
+        if (!title || typeof title !== 'string' || title.trim() === '') {
             throw new ProductException('Titulo no puede estar vacio.');
         }
         this.title = title;
@@ -90,6 +90,12 @@ class Product {
     static validateProduct(product) {
         if (!product || typeof product !== 'object') {
             throw new ProductException('El producto proporcionado no es valido.');
+        }
+        const requiredFields = ['uid', 'title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
+        for (const field of requiredFields) {
+            if (!product.hasOwnProperty(field)) {
+                throw new ProductException(`Falta el campo ${field} en el producto.`);
+            }
         }
     }
 
