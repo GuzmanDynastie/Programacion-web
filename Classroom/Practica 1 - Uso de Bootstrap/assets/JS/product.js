@@ -29,29 +29,35 @@ class Product {
 
     // Setters
     setUID(uid) {
-        if (!uid) {
+        if (!uid || typeof uid !== 'string' || uid.trim() === '') {
             throw new ProductException('UID no puede estar vacio.');
         }
         this.uid = uid;
     }
 
-    setTitle(title) {
-        if(!title) {
+    setTitle(title ) {
+        if(!title || typeof uid !== 'string' || uid.trim() === '') {
             throw new ProductException('Titulo no puede estar vacio.');
         }
         this.title = title;
     }
 
     setDescription(description) {
+        if (typeof description !== 'string') {
+            throw new ProductException('La descripcion debe ser una cadena.');
+        }
         this.description = description;
     }
 
     setImageUrl(imageUrl) {
+        if (typeof imageUrl !== 'string' || imageUrl.trim() === ''){
+            throw new ProductException('La URL de la imagen debe ser una cadena no vacia.');
+        }
         this.imageUrl = imageUrl;
     }
 
     setPiece(piece) {
-        if (!piece) {
+        if (!piece || typeof piece !== 'string' || piece.trim() === '') {
             throw new ProductException('Pieza no puede estar vacia.');
         }
         this.piece = piece;
@@ -72,8 +78,8 @@ class Product {
     }
 
     setCategory(category) {
-        if (!category) {
-            throw new ProductException('Categoria no puede estar vacia');
+        if (!category || typeof category !== 'string' || category.trim() === '') {
+            throw new ProductException('La categoría debe ser una cadena no vacía.');
         }
         this.category = category;
     }
