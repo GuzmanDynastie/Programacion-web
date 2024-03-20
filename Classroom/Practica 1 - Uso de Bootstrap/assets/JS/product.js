@@ -1,6 +1,6 @@
 class Product {
-    constructor(uid, title, description, imageUrl, piece, stock, pricePerPiece, category){
-        this.setUID(uid);
+    constructor(uid, title, description, imageUrl, piece, stock, pricePerPiece, category) {
+        this._uid = uid;
         this.setTitle(title);
         this.setDescription(description);
         this.setImageUrl(imageUrl);
@@ -10,8 +10,11 @@ class Product {
         this.setCategory(category);
     }
 
+    // Getter privado
+    _getUID() { return this._uid; }
+
     // Getters
-    getUID() { return this.uid; }
+    getUID() { throw new ProductException('No se puede acceder al UID desde fuera de la clase.'); }
 
     getTitle() { return this.title; }
 
@@ -20,7 +23,7 @@ class Product {
     getImageUrl() { return this.imageUrl; }
 
     getPiece() { return this.piece; }
-    
+
     getStock() { return this.stock; }
 
     getPricePerPiece() { return this.pricePerPiece; }
@@ -35,8 +38,8 @@ class Product {
         this.uid = uid;
     }
 
-    setTitle(title ) {
-        if(!title || typeof uid !== 'string' || uid.trim() === '') {
+    setTitle(title) {
+        if (!title || typeof uid !== 'string' || uid.trim() === '') {
             throw new ProductException('Titulo no puede estar vacio.');
         }
         this.title = title;
@@ -50,7 +53,7 @@ class Product {
     }
 
     setImageUrl(imageUrl) {
-        if (typeof imageUrl !== 'string' || imageUrl.trim() === ''){
+        if (typeof imageUrl !== 'string' || imageUrl.trim() === '') {
             throw new ProductException('La URL de la imagen debe ser una cadena no vacia.');
         }
         this.imageUrl = imageUrl;
@@ -85,14 +88,59 @@ class Product {
     }
 
     static validateProduct(product) {
-        if (!product || typeof product !== 'object'){
+        if (!product || typeof product !== 'object') {
             throw new ProductException('El producto proporcionado no es valido.');
         }
     }
+
+    static createFromJson(jsonValue) {
+        try {
+            const productData = JSON.parse(jsonValue);
+
+            return new Product(
+                productData.uid,
+                productData.title,
+                productData.description,
+                productData.imageUrl,
+                productData.piece,
+                productData.stock,
+                productData.pricePerPiece,
+                productData.category
+            );
+
+        } catch (error) {
+            throw new ProductException('Error al crear el producto desde JSON: ' + error.message);
+        }
+    }
+
+    static createFromObject(obj) {
+        return new Product(
+            obj.uid,
+            obj.title,
+            obj.description,
+            obj.imageUrl,
+            obj.piece,
+            obj.stock,
+            obj.pricePerPiece,
+            obj.category
+        );
+    }
+
+    static cleanObject(obj) {
+        const cleanedObject = {};
+        const productsKeys = ['uid', 'title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
+        for (const key of productsKeys) {
+            if (obj.hasOwnProperty(key)) {
+                cleanedObject[key] = obj[key];
+            }
+        }
+        return cleanedObject;
+    }
+
 }
 
 class ProductException extends Error {
-    constructor(message){
+    constructor(message) {
         super(message);
         this.name = 'ProductException';
     }
