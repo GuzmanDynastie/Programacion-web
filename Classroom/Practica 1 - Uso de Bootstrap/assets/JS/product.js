@@ -1,6 +1,8 @@
+const { generateUUID } = require('./utils.js');
+
 class Product {
-    constructor(uid, title, description, imageUrl, piece, stock, pricePerPiece, category) {
-        this._uid = uid;
+    constructor(title, description, imageUrl, piece, stock, pricePerPiece, category) {
+        this._uid = generateUUID();
         this.setTitle(title);
         this.setDescription(description);
         this.setImageUrl(imageUrl);
@@ -10,11 +12,8 @@ class Product {
         this.setCategory(category);
     }
 
-    // Getter privado
-    _getUID() { return this._uid; }
-
     // Getters
-    getUID() { throw new ProductException('No se puede acceder al UID desde fuera de la clase.'); }
+    getUID() { return this._uid }
 
     getTitle() { return this.title; }
 
@@ -31,13 +30,6 @@ class Product {
     getCategory() { return this.category; }
 
     // Setters
-    setUID(uid) {
-        if (!uid || typeof uid !== 'string' || uid.trim() === '') {
-            throw new ProductException('UID no puede estar vacio.');
-        }
-        this._uid = uid;
-    }
-
     setTitle(title) {
         if (!title || typeof title !== 'string' || title.trim() === '') {
             throw new ProductException('Titulo no puede estar vacio.');
@@ -91,7 +83,7 @@ class Product {
         if (!product || typeof product !== 'object') {
             throw new ProductException('El producto proporcionado no es valido.');
         }
-        const requiredFields = ['uid', 'title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
+        const requiredFields = ['title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
         for (const field of requiredFields) {
             if (!product.hasOwnProperty(field)) {
                 throw new ProductException(`Falta el campo ${field} en el producto.`);
@@ -104,7 +96,6 @@ class Product {
             const productData = JSON.parse(jsonValue);
 
             return new Product(
-                productData.uid,
                 productData.title,
                 productData.description,
                 productData.imageUrl,
@@ -121,7 +112,6 @@ class Product {
 
     static createFromObject(obj) {
         return new Product(
-            obj.uid,
             obj.title,
             obj.description,
             obj.imageUrl,
@@ -134,7 +124,7 @@ class Product {
 
     static cleanObject(obj) {
         const cleanedObject = {};
-        const productsKeys = ['uid', 'title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
+        const productsKeys = ['title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
         for (const key of productsKeys) {
             if (obj.hasOwnProperty(key)) {
                 cleanedObject[key] = obj[key];
@@ -151,3 +141,5 @@ class ProductException extends Error {
         this.name = 'ProductException';
     }
 }
+
+module.exports = Product;
