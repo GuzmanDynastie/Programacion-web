@@ -63,3 +63,5 @@ class ShoppingCartException extends Error {
         this.name = 'ShoppingCartException';
     }
 }
+
+module.exports = ShoppingCart;
