@@ -1,3 +1,5 @@
+import { Product } from "./product.js";
+
 const products = [];
 
 function getProducts() {
@@ -5,22 +7,23 @@ function getProducts() {
 }
 
 function getProductById(uuid) {
-    return products.find(product => product.uuid === uuid);
+    return products.find(product => product._uid === uuid);
 }
 
 function createProduct(product) {
-    products.push(product);
+    products.push(Product.createFromObject(product));
 }
 
-function updateProduct(uuid, updateProduct) {
-    const index = products.findIndex(product => product.uuid === uuid);
+function updatedProduct(uuid, updateProduct) {
+    const index = products.findIndex(product => product._uid === uuid);
     if (index !== -1) {
+        updateProduct._uid = uuid;
         products[index] = updateProduct;
     }
 }
 
 function deleteProduct(uuid) {
-    const index = products.findIndex(product => product.uuid === uuid);
+    const index = products.findIndex(product => product._uid === uuid);
     if (index !== -1) {
         products.splice(index, 1);
     }
@@ -38,11 +41,4 @@ function findProduct(query) {
     return [];
 }
 
-module.exports = {
-    getProducts,
-    getProductById,
-    createProduct,
-    updateProduct,
-    deleteProduct,
-    findProduct
-}
+export { getProducts, getProductById, createProduct, updatedProduct, deleteProduct, findProduct };
