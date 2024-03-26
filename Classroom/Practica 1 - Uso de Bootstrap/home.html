@@ -7,7 +7,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="./assets/stylesheets/home.css">
-    <script src="./assets/JS/index.js"></script>
 
     <!-- Bootstrap CSS v5.2.1 -->
     <!-- FontAwesome 6.2.0 CSS -->
@@ -37,7 +36,8 @@
 
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="text" placeholder="Encuentra todo empieza a buscar" />
+                <input id="searchInput" class="form-control me-sm-2" type="text"
+                    placeholder="Encuentra todo empieza a buscar" />
                 <button class="boton__ btn btn-outline-success my-2 my-sm-0" type="submit">
                     Buscar
                 </button>
@@ -100,7 +100,7 @@
     </div>
 
     <div class="container-1">
-        <div class="card">
+        <!-- <div class="card">
             <div class="product">
                 <img class="card-img-top" src="https://nupec.com/wp-content/uploads/2018/12/npc-empaque-cachorro.png"
                     alt="Title" />
@@ -140,30 +140,32 @@
                     <p class="card-text">2 kg (paquete de 1) x $279</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
-    <nav aria-label="Page navigation" class="pagination">
-        <ul class="pagination    ">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">Previous</span>
-                </a>
-            </li>
-            <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <footer>
+        <nav aria-label="Page navigation" class="pagination">
+            <ul class="pagination    ">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
 
     <!-- Modal Body -->
@@ -180,17 +182,16 @@
                 </div>
                 <div class="modal-body">
                     <form action="">
-                        <label for="" class="login">Correo</label><br>
-                        <input type="email" placeholder="Ingresa tu correo" class="login-input" required>
-                        <span class="input-group-addon icon">
-                            <i class="fa-solid fa-user a"></i>
-                        </span>
-                        <br>
-                        <label for="" class="login">Password</label><br>
-                        <input type="password" placeholder="Ingresa tu contraseña" class="login-input" required>
-                        <span class="input-group-addon icon">
-                            <i class="fa-solid fa-key"></i>
-                        </span>
+                        <label class="login">Correo <input id="input_name" type="email" placeholder="Ingresa tu correo"
+                                class="login-input" required><span class="input-group-addon icon">
+                                <i class="fa-solid fa-user a"></i>
+                            </span></label>
+
+                        <label class="login">Password <input id="input_password" type="password"
+                                placeholder="Ingresa tu contraseña" class="login-input" required><span
+                                class="input-group-addon icon">
+                                <i class="fa-solid fa-key"></i>
+                            </span></label>
                         <br>
                         <br>
                         <input type="submit" value="Login" class="save">
@@ -220,12 +221,17 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="input-together">
-                            <input id="name" "text" placeholder="Nombre(s)" class="register-input" required>
-                            <input type="text" placeholder="Apellido(s)" class="register-input" required><br>
+                            <input id="name" "text" placeholder="Nombre(s)" class="register-input" autocomplete="name"
+                                required>
+                            <input id="input_apellidos" type="text" placeholder="Apellido(s)" class="register-input"
+                                required><br>
                         </div>
-                        <input type="email" placeholder="Tu correo" class="register-input" required><br>
-                        <input type="password" placeholder="Contraseña" class="register-input" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}"><br>
-                        <input type="password" placeholder="Confirmar contraseña" class="register-input" required><br>
+                        <input id="input_email_registro" type="email" placeholder="Tu correo" class="register-input"
+                            required><br>
+                        <input id="input_password_registro" type="password" placeholder="Contraseña"
+                            class="register-input" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}"><br>
+                        <input id="input_password2_registro" type="password" placeholder="Confirmar contraseña"
+                            class="register-input" required><br>
 
                         <input type="submit" value="Registrarse" class="registrar">
                     </form>
@@ -243,6 +249,9 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
+    <!-- Estructura JS -->
+    <script type="module" src="./assets/JS/index.js"></script>
+    <script type="module" src="./assets/DOM/addProducts.js"></script>
 
 </body>
 
