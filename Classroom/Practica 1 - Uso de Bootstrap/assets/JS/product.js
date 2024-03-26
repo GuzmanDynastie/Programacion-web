@@ -1,15 +1,15 @@
-const { generateUUID } = require('./utils.js');
+import { generateUUID } from './utils.js';
 
 class Product {
     constructor(title, description, imageUrl, piece, stock, pricePerPiece, category) {
         this._uid = generateUUID();
-        this.setTitle(title);
-        this.setDescription(description);
-        this.setImageUrl(imageUrl);
-        this.setPiece(piece);
-        this.setStock(stock);
-        this.setPricePerPiece(pricePerPiece);
-        this.setCategory(category);
+        this.title = title;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.piece = piece;
+        this.stock = stock;
+        this.pricePerPiece = pricePerPiece;
+        this.category = category;
     }
 
     // Getters
@@ -104,35 +104,34 @@ class Product {
                 productData.pricePerPiece,
                 productData.category
             );
-
         } catch (error) {
             throw new ProductException('Error al crear el producto desde JSON: ' + error.message);
         }
     }
 
     static createFromObject(obj) {
-        return new Product(
-            obj.title,
-            obj.description,
-            obj.imageUrl,
-            obj.piece,
-            obj.stock,
-            obj.pricePerPiece,
-            obj.category
-        );
+        if (obj instanceof Object && !(obj instanceof Product)) {
+            const { title, description, imageUrl, piece, stock, pricePerPiece, category } = obj;
+            return new Product(title, description, imageUrl, piece, stock, pricePerPiece, category);
+        } else {
+            throw new ProductException('Formato de Objeto invalido');
+        }
     }
 
     static cleanObject(obj) {
-        const cleanedObject = {};
-        const productsKeys = ['title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
-        for (const key of productsKeys) {
-            if (obj.hasOwnProperty(key)) {
-                cleanedObject[key] = obj[key];
+        if (obj instanceof Object) {
+            const validPropierties = ['title', 'description', 'imageUrl', 'piece', 'stock', 'pricePerPiece', 'category'];
+            const cleanedObject = {};
+            for (const prop of validPropierties) {
+                if (obj.hasOwnProperty(prop)) {
+                    cleanedObject[prop] = obj[prop];
+                }
             }
+            return cleanedObject;
+        } else {
+            throw new ProductException('Formato de Objeto invalido');
         }
-        return cleanedObject;
     }
-
 }
 
 class ProductException extends Error {
@@ -142,4 +141,4 @@ class ProductException extends Error {
     }
 }
 
-module.exports = Product;
+export { Product };
