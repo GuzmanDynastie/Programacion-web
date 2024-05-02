@@ -20,7 +20,7 @@ function addProduct(product) {
     } catch (error) {
         console.error('Error al agregar el producto:', error);
     }
-}
+};
 
 
 const products = JSON.parse(fs.readFileSync(productsFilePath));
@@ -28,18 +28,18 @@ const products = JSON.parse(fs.readFileSync(productsFilePath));
 
 function getProducts() {
     return products;
-}
+};
 
 function getProductById(uuid) {
     return products.find(product => product._uid === uuid);
-}
+};
 
 function createProduct(product) {
     const newProduct = Product.createFromObject(product);
     products.push(newProduct);
     saveProducts(products);
     return newProduct;
-}
+};
 
 function updatedProduct(uuid, updateProduct) {
     const index = products.findIndex(product => product._uid === uuid);
@@ -48,7 +48,7 @@ function updatedProduct(uuid, updateProduct) {
         products[index] = updateProduct;
         return updateProduct;
     }
-}
+};
 
 function deleteProduct(uuid) {
     const index = products.findIndex(product => product._uid === uuid);
@@ -57,7 +57,7 @@ function deleteProduct(uuid) {
         products.splice(index, 1);
         return deletedProduct;
     }
-}
+};
 
 function findProduct(query) {
     const [category, title] = query.split(':');
@@ -69,6 +69,6 @@ function findProduct(query) {
         return products.filter(product => product.title.includes(title));
     }
     return [];
-}
+};
 
 module.exports = { getProducts, getProductById, createProduct, updatedProduct, deleteProduct, findProduct, addProduct };

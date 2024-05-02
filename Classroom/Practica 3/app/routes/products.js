@@ -3,7 +3,8 @@ const dataHandler = require('../controllers/data_handler');
 
 // Consultar productos
 router.get('/products', (req, res) => {
-    const filteredProducts = req.query.query ? dataHandler.filterProducts(req.query.query) : dataHandler.getProducts();
+    // const filteredProducts = req.query.query ? dataHandler.filterProducts(req.query.query) : dataHandler.getProducts();
+    const filteredProducts = req.query.query ? dataHandler.findProduct(req.query.query) : dataHandler.getProducts();
     res.json(filteredProducts);
 });
 
