@@ -1,5 +1,5 @@
-const { getProducts, getProductById, createProduct, updatedProduct, deleteProduct, findProduct } = require('./data_handler.js');
-const path = require('path');
+// const { getProducts, getProductById, createProduct, updatedProduct, deleteProduct, findProduct } = require('./data_handler.js');
+// const path = require('path');
 
 // const productsToAdd = path.join(__dirname, '../data/products.json'); 
 
@@ -20,17 +20,17 @@ const path = require('path');
 //     });
 // }
 
-const updatedProductData = { _uid: '', title: 'FELINO SENIOR', description: 'NUTRICIÓN ESPECIALIZADA PARA GATOS DE EDAD AVANZADA', imageUrl: 'https://nupec.com/wp-content/uploads/2022/12/IMG_Senior.png', piece: '1', stock: 500, pricePerPiece: 569, category: 'NUTRICIÓN FELINA ESPECIALIZADA' };
+// const updatedProductData = { _uid: '', title: 'FELINO SENIOR', description: 'NUTRICIÓN ESPECIALIZADA PARA GATOS DE EDAD AVANZADA', imageUrl: 'https://nupec.com/wp-content/uploads/2022/12/IMG_Senior.png', piece: '1', stock: 500, pricePerPiece: 569, category: 'NUTRICIÓN FELINA ESPECIALIZADA' };
 
-function executeSearchQuery(formato) {
-    const query = formato;
-    if (!query) {
-        console.log('Consulta invalida');
-        return;
-    }
-    const searchResult = findProduct(query);
-    console.table('Resultado de la búsqueda:', searchResult);
-}
+// function executeSearchQuery(formato) {
+//     const query = formato;
+//     if (!query) {
+//         console.log('Consulta invalida');
+//         return;
+//     }
+//     const searchResult = findProduct(query);
+//     console.table('Resultado de la búsqueda:', searchResult);
+// }
 
 // addProducts();
 

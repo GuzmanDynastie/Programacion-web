@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.join(__dirname, '../public/data/products.json');
 
 // Función para guardar los productos en el archivo products.json
 function saveProducts(products) {
@@ -21,7 +21,6 @@ function addProduct(product) {
         console.error('Error al agregar el producto:', error);
     }
 };
-
 
 const products = JSON.parse(fs.readFileSync(productsFilePath));
 // const products = [];

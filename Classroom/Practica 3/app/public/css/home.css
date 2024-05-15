@@ -44,26 +44,72 @@ ol.carrusel__ {
 }
 
 .card {
-    width: 260px;
+    width: 230px;
+}
+
+.link-product:hover {
+    color: rgb(40, 133, 255);
 }
 
 .card-title {
     font-size: small;
+    justify-content: center;
+    width: 200px;
+}
+
+.link-product {
+    text-decoration: none;
+    color: black;
+}
+
+.product-c {
+    width: 130px;
+    margin-top: 20px;
+}
+
+.select-value {
+    width: 465px;
 }
 
 .product {
-    margin-top: 20px;
-    margin-left: 35px;
-    margin-bottom: 10px;
-    width: 190px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.card-body {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
 }
 
 .card-text {
     font-size: small;
+    width: auto;
 }
 
 .card-img-top {
-    height: 250px;
+    height: 170px;
+}
+
+.box-btn-add-product {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.btn-add-product {
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    background-color: rgb(61, 182, 172); color: white;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .container-1 {
@@ -78,7 +124,9 @@ ol.carrusel__ {
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .login {
